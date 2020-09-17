@@ -1,0 +1,28 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PrintToPdfRepro.ViewModels;assembly=PrintToPdfRepro"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Width="600"
+        Height="400"
+        x:Class="PrintToPdfRepro.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PrintToPdfRepro">
+
+  <StackPanel Orientation="Horizontal"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+    <TextBlock VerticalAlignment="Center"
+               Text="Choose Printer: "
+               FontSize="20"></TextBlock>
+    <DropDown VerticalAlignment="Center" 
+              Items="{Binding InstalledPrinters}"
+              SelectedItem="{Binding SelectedPrinter}"></DropDown>
+    <Button Margin="20,0,0,0"
+            VerticalAlignment="Center"
+            Content="Print Testpage"
+            Command="{Binding PrintTestPageCommand}"></Button>
+  </StackPanel>
+
+</Window>
